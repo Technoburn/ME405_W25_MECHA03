@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Boot &#8212; MECHA03 ROMI 0.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=5ecbeea2" />
+    <link rel="stylesheet" type="text/css" href="../_static/basic.css?v=b08954a9" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=27fed22d" />
+    <script src="../_static/documentation_options.js?v=837179f8"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Buttons" href="buttons.html" />
+    <link rel="prev" title="Hardware Drivers" href="index.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="boot">
+<h1>Boot<a class="headerlink" href="#boot" title="Link to this heading">¶</a></h1>
+<p>The boot script executes on startup and ensures that specific pins are
+configured properly and the Bluetooth serial device is operational.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pyb</span><span class="w"> </span><span class="kn">import</span> <span class="n">UART</span><span class="p">,</span> <span class="n">Pin</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pyb</span><span class="w"> </span><span class="kn">import</span> <span class="n">repl_uart</span>
+
+<span class="n">PC9</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="n">Pin</span><span class="o">.</span><span class="n">cpu</span><span class="o">.</span><span class="n">C9</span><span class="p">,</span><span class="n">Pin</span><span class="o">.</span><span class="n">OUT_PP</span><span class="p">)</span>
+
+<span class="n">PC9</span><span class="o">.</span><span class="n">low</span><span class="p">()</span>
+
+<span class="c1"># Make a serial port object from the UART class</span>
+<span class="n">BT_ser</span> <span class="o">=</span> <span class="n">UART</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">115200</span><span class="p">)</span>
+
+<span class="c1"># Deconfigure default pins</span>
+<span class="n">Pin</span><span class="p">(</span><span class="n">Pin</span><span class="o">.</span><span class="n">cpu</span><span class="o">.</span><span class="n">C4</span><span class="p">,</span>  <span class="n">mode</span><span class="o">=</span><span class="n">Pin</span><span class="o">.</span><span class="n">ANALOG</span><span class="p">)</span>     <span class="c1"># Set pin modes back to default</span>
+<span class="n">Pin</span><span class="p">(</span><span class="n">Pin</span><span class="o">.</span><span class="n">cpu</span><span class="o">.</span><span class="n">C5</span><span class="p">,</span>  <span class="n">mode</span><span class="o">=</span><span class="n">Pin</span><span class="o">.</span><span class="n">ANALOG</span><span class="p">)</span>
+
+<span class="n">Pin</span><span class="p">(</span><span class="n">Pin</span><span class="o">.</span><span class="n">cpu</span><span class="o">.</span><span class="n">B10</span><span class="p">,</span>  <span class="n">mode</span><span class="o">=</span><span class="n">Pin</span><span class="o">.</span><span class="n">OUT_PP</span><span class="p">)</span>     <span class="c1"># Set pin modes back to default</span>
+<span class="n">Pin</span><span class="p">(</span><span class="n">Pin</span><span class="o">.</span><span class="n">cpu</span><span class="o">.</span><span class="n">B11</span><span class="p">,</span>  <span class="n">mode</span><span class="o">=</span><span class="n">Pin</span><span class="o">.</span><span class="n">OUT_PP</span><span class="p">)</span>
+
+<span class="c1"># Configure the selected pins in coordination with the alternate function table</span>
+<span class="n">Pin</span><span class="p">(</span><span class="n">Pin</span><span class="o">.</span><span class="n">cpu</span><span class="o">.</span><span class="n">C10</span><span class="p">,</span>  <span class="n">mode</span><span class="o">=</span><span class="n">Pin</span><span class="o">.</span><span class="n">ALT</span><span class="p">,</span> <span class="n">alt</span><span class="o">=</span><span class="mi">7</span><span class="p">)</span> <span class="c1"># Set pin modes to UART matching column 7 in alt. fcn. table</span>
+<span class="n">Pin</span><span class="p">(</span><span class="n">Pin</span><span class="o">.</span><span class="n">cpu</span><span class="o">.</span><span class="n">C11</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">Pin</span><span class="o">.</span><span class="n">ALT</span><span class="p">,</span> <span class="n">alt</span><span class="o">=</span><span class="mi">7</span><span class="p">)</span>
+
+<span class="n">Pin</span><span class="p">(</span><span class="n">Pin</span><span class="o">.</span><span class="n">cpu</span><span class="o">.</span><span class="n">B13</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">Pin</span><span class="o">.</span><span class="n">ALT</span><span class="p">,</span> <span class="n">alt</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span> <span class="c1">#Set pin modes to I2C2 matching column 4 in alt. function table</span>
+<span class="n">Pin</span><span class="p">(</span><span class="n">Pin</span><span class="o">.</span><span class="n">cpu</span><span class="o">.</span><span class="n">B14</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">Pin</span><span class="o">.</span><span class="n">ALT</span><span class="p">,</span> <span class="n">alt</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+
+<span class="n">repl_uart</span><span class="p">(</span><span class="n">BT_ser</span><span class="p">)</span> <span class="c1"># Change which port the repl is mirrored to</span>
+</pre></div>
+</div>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">MECHA03 ROMI</a></h1>
+
+
+
+
+
+
+
+
+
+<search id="searchbox" style="display: none" role="search">
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script><h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Hardware Drivers</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Boot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="buttons.html">Buttons</a></li>
+<li class="toctree-l2"><a class="reference internal" href="controller.html">Controller</a></li>
+<li class="toctree-l2"><a class="reference internal" href="encoder.html">Encoder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="imu.html">Inertial Measurement Unit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="line_sensor.html">Line Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="motor.html">Motor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="path.html">Path</a></li>
+<li class="toctree-l2"><a class="reference internal" href="voltage.html">Voltage</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../tasks/index.html">Tasks</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  <li><a href="index.html">Hardware Drivers</a><ul>
+      <li>Previous: <a href="index.html" title="previous chapter">Hardware Drivers</a></li>
+      <li>Next: <a href="buttons.html" title="next chapter">Buttons</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2025, Col Cook, Nathan Neugeboren.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 8.2.3</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
+      
+      |
+      <a href="../_sources/drivers/boot.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

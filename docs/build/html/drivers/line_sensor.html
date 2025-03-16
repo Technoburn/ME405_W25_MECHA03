@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Line Sensors &#8212; MECHA03 ROMI 0.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=5ecbeea2" />
+    <link rel="stylesheet" type="text/css" href="../_static/basic.css?v=b08954a9" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=27fed22d" />
+    <script src="../_static/documentation_options.js?v=837179f8"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Motor" href="motor.html" />
+    <link rel="prev" title="Inertial Measurement Unit" href="imu.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="line-sensors">
+<h1>Line Sensors<a class="headerlink" href="#line-sensors" title="Link to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="line_sensor.LineSensor">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">line_sensor.</span></span><span class="sig-name descname"><span class="pre">LineSensor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">adc_Pin</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">pyb.Pin</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#line_sensor.LineSensor" title="Link to this definition">¶</a></dt>
+<dd><p>Single channel IR line sensor interface encapsulated in a Python class</p>
+<p>Initializes a Line Sensor Object</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>adc_Pin</strong> – Analog input pin for line sensor</p></li>
+<li><p><strong>num</strong> – number associated with sensor</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="line_sensor.LineSensor.adc">
+<span class="sig-name descname"><span class="pre">adc</span></span><a class="headerlink" href="#line_sensor.LineSensor.adc" title="Link to this definition">¶</a></dt>
+<dd><p>Sensor ADC Object</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="line_sensor.LineSensor.black_val">
+<span class="sig-name descname"><span class="pre">black_val</span></span><a class="headerlink" href="#line_sensor.LineSensor.black_val" title="Link to this definition">¶</a></dt>
+<dd><p>Calibrated value for black</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="line_sensor.LineSensor.calibrate_black">
+<span class="sig-name descname"><span class="pre">calibrate_black</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#line_sensor.LineSensor.calibrate_black" title="Link to this definition">¶</a></dt>
+<dd><p>Calibrate the sensor to what value represents black</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="line_sensor.LineSensor.calibrate_white">
+<span class="sig-name descname"><span class="pre">calibrate_white</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#line_sensor.LineSensor.calibrate_white" title="Link to this definition">¶</a></dt>
+<dd><p>Calibrate the sensor to what value represents white</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="line_sensor.LineSensor.num">
+<span class="sig-name descname"><span class="pre">num</span></span><a class="headerlink" href="#line_sensor.LineSensor.num" title="Link to this definition">¶</a></dt>
+<dd><p>Number associated with sensor channel</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="line_sensor.LineSensor.read">
+<span class="sig-name descname"><span class="pre">read</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#line_sensor.LineSensor.read" title="Link to this definition">¶</a></dt>
+<dd><p>Read the light sensor and return a normalized value
+taking into account calibration</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Normalized light level between 0 and 1</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="line_sensor.LineSensor.white_val">
+<span class="sig-name descname"><span class="pre">white_val</span></span><a class="headerlink" href="#line_sensor.LineSensor.white_val" title="Link to this definition">¶</a></dt>
+<dd><p>Calibrated value for white</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="line_sensor.SensorArray">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">line_sensor.</span></span><span class="sig-name descname"><span class="pre">SensorArray</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">CNTRL</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">pyb.Pin</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sensor_define</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">pyb.Pin</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#line_sensor.SensorArray" title="Link to this definition">¶</a></dt>
+<dd><p>Multi-channel IR Line Sensor interface</p>
+<p>Initializes a Line Sensor Array object</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>CNTRL</strong> – Sensor dimming control pin for line sensor array</p></li>
+<li><p><strong>sensor_define</strong> – List of tuples, (ADC Pin, number associated
+for each sensor)</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="line_sensor.SensorArray.CNTRL">
+<span class="sig-name descname"><span class="pre">CNTRL</span></span><a class="headerlink" href="#line_sensor.SensorArray.CNTRL" title="Link to this definition">¶</a></dt>
+<dd><p>Sensor dimming control pin</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="line_sensor.SensorArray.calibrate_all">
+<span class="sig-name descname"><span class="pre">calibrate_all</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#line_sensor.SensorArray.calibrate_all" title="Link to this definition">¶</a></dt>
+<dd><p>Calibrate sensors array for a specified color: (“white” or “black”)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>color</strong> – String of either “black” or “white”, corresponding to
+what color is being calibrated for</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="line_sensor.SensorArray.dimm">
+<span class="sig-name descname"><span class="pre">dimm</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#line_sensor.SensorArray.dimm" title="Link to this definition">¶</a></dt>
+<dd><p>Reduce the emitting level of the light sensors array by 3.33%</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="line_sensor.SensorArray.dimm_lvl">
+<span class="sig-name descname"><span class="pre">dimm_lvl</span></span><a class="headerlink" href="#line_sensor.SensorArray.dimm_lvl" title="Link to this definition">¶</a></dt>
+<dd><p>Current Dimming level of the array</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="line_sensor.SensorArray.get_centroid">
+<span class="sig-name descname"><span class="pre">get_centroid</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#line_sensor.SensorArray.get_centroid" title="Link to this definition">¶</a></dt>
+<dd><p>Calculate the centroid of the distribution light array distribution</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>centroid of the sensor readings</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="line_sensor.SensorArray.read_all">
+<span class="sig-name descname"><span class="pre">read_all</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#line_sensor.SensorArray.read_all" title="Link to this definition">¶</a></dt>
+<dd><p>Read the light sensor array and return normalized values,
+taking into account calibration</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>List of floats of normalized light levels between 0 and 1 for
+each light sensor in the array</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list[float]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="line_sensor.SensorArray.sensor_list">
+<span class="sig-name descname"><span class="pre">sensor_list</span></span><a class="headerlink" href="#line_sensor.SensorArray.sensor_list" title="Link to this definition">¶</a></dt>
+<dd><p>List of line sensors in the array</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="line_sensor.SensorArray.sensor_values">
+<span class="sig-name descname"><span class="pre">sensor_values</span></span><a class="headerlink" href="#line_sensor.SensorArray.sensor_values" title="Link to this definition">¶</a></dt>
+<dd><p>Most recent read sensor values</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">MECHA03 ROMI</a></h1>
+
+
+
+
+
+
+
+
+
+<search id="searchbox" style="display: none" role="search">
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script><h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Hardware Drivers</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="boot.html">Boot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="buttons.html">Buttons</a></li>
+<li class="toctree-l2"><a class="reference internal" href="controller.html">Controller</a></li>
+<li class="toctree-l2"><a class="reference internal" href="encoder.html">Encoder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="imu.html">Inertial Measurement Unit</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Line Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="motor.html">Motor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="path.html">Path</a></li>
+<li class="toctree-l2"><a class="reference internal" href="voltage.html">Voltage</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../tasks/index.html">Tasks</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  <li><a href="index.html">Hardware Drivers</a><ul>
+      <li>Previous: <a href="imu.html" title="previous chapter">Inertial Measurement Unit</a></li>
+      <li>Next: <a href="motor.html" title="next chapter">Motor</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2025, Col Cook, Nathan Neugeboren.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 8.2.3</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
+      
+      |
+      <a href="../_sources/drivers/line_sensor.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>MECHA03 ROMI documentation &#8212; MECHA03 ROMI 0.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=5ecbeea2" />
+    <link rel="stylesheet" type="text/css" href="_static/basic.css?v=b08954a9" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=27fed22d" />
+    <script src="_static/documentation_options.js?v=837179f8"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Hardware Drivers" href="drivers/index.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="mecha03-romi-documentation">
+<h1>MECHA03 ROMI documentation<a class="headerlink" href="#mecha03-romi-documentation" title="Link to this heading">¶</a></h1>
+<p><strong>Authors: Col Cook and Nathan Neugeboren</strong></p>
+<p><strong>Instructor: Charlie Revfem</strong></p>
+<section id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Link to this heading">¶</a></h2>
+<p>Over the course of a 10 week quarter, we worked through labs which built-up
+mechatronics skills using a 2-wheeled robot ROMI.</p>
+<p>// Insert picture of ROMI</p>
+<p>We implemented multitasking programs to characterize motor constants, use an
+Infra-red Line Sensor to follow a line in a circle, and interfaced with an IMU
+over I2C to point in a specific heading. All of this came together through in
+our final project in which ROMI had to make its way through a course, hitting
+checkpoints, navigating through a tight space, detecting a wall, and making it
+all the way back to the starting position, with the added bonus of time
+deductions for pushing cups outside of a designated zone.</p>
+</section>
+<section id="course-strategy">
+<h2>Course &amp; Strategy<a class="headerlink" href="#course-strategy" title="Link to this heading">¶</a></h2>
+<p>// Insert picture of course</p>
+<p>Our strategy was to cut as many corners as possible, seperating the track into
+many straight-line segments. For each segement we controlled the heading of ROMI
+based either on line following or IMU heading and measured the distance traveled
+to determine when to switch to the next line segment. This strategy allowed us
+to achieve the fastest time in the class, consitently achieving times of
+approximately 7 seconds and pushing both cups out of their zones resulting in a
+-10 second deduction. Our fastest time, including deductions was -3.10 seconds.</p>
+<div  class="sphinx-contrib-video-container align-left"><video controls="True" preload="auto" width="100%"><source src="_images/mecha03_6_90_seconds.mp4" type="video/mp4"></video></div></section>
+<section id="contents">
+<h2>Contents<a class="headerlink" href="#contents" title="Link to this heading">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="drivers/index.html">Hardware Drivers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="drivers/boot.html">Boot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="drivers/buttons.html">Buttons</a></li>
+<li class="toctree-l2"><a class="reference internal" href="drivers/controller.html">Controller</a></li>
+<li class="toctree-l2"><a class="reference internal" href="drivers/encoder.html">Encoder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="drivers/imu.html">Inertial Measurement Unit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="drivers/line_sensor.html">Line Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="drivers/motor.html">Motor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="drivers/path.html">Path</a></li>
+<li class="toctree-l2"><a class="reference internal" href="drivers/voltage.html">Voltage</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tasks/index.html">Tasks</a></li>
+</ul>
+</div>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="#">MECHA03 ROMI</a></h1>
+
+
+
+
+
+
+
+
+
+<search id="searchbox" style="display: none" role="search">
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script><h3>Navigation</h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="drivers/index.html">Hardware Drivers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tasks/index.html">Tasks</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="#">Documentation overview</a><ul>
+      <li>Next: <a href="drivers/index.html" title="next chapter">Hardware Drivers</a></li>
+  </ul></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2025, Col Cook, Nathan Neugeboren.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 8.2.3</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
+      
+      |
+      <a href="_sources/index.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
