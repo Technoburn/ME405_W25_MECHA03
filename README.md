@@ -11,3 +11,7 @@ The documentation pages are at https://technoburn.github.io/ME405_W25_MECHA03/
 ### Term Project Task Files
 
 * These files are used to implement the multitasking structure of the term project.
+
+### ROMI CAD Files
+
+* These files were used to help design and 3D print hardware layout and mounting.
