@@ -10,7 +10,7 @@ Summary
 Over the course of a 10 week quarter, we worked through labs which built-up 
 mechatronics skills using a 2-wheeled robot ROMI.
 
-// Insert picture of ROMI
+// Insert picture of RO MI
 
 We implemented multitasking programs to characterize motor constants, use an 
 Infra-red Line Sensor to follow a line in a circle, and interfaced with an IMU 
