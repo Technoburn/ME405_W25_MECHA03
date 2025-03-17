@@ -22,7 +22,7 @@ deductions for pushing cups outside of a designated zone.
 
 Course & Strategy
 -----------------
-.. image:: path/Game_Track.pdf
+.. image:: _static/Game_Track.png
   :width: 100%
   :alt: Game Track
 

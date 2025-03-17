@@ -22,7 +22,9 @@ deductions for pushing cups outside of a designated zone.
 
 Course & Strategy
 -----------------
-// Insert picture of course
+.. image:: _static/Game_Track.png
+  :width: 100%
+  :alt: Game Track
 
 Our strategy was to cut as many corners as possible, seperating the track into 
 many straight-line segments. For each segement we controlled the heading of ROMI
