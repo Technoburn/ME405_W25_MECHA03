@@ -37,4 +37,34 @@ Shares
     * - run
       - Unsigned Byte
       - Flag to signal when ROMI should begin running the course
+    * - bump
+      - Unsigned Byte
+      - Flag to signal when a bump has occured
+    * - cal_white
+      - Unsigned Byte
+      - Flag to tell line sensor to use value for white calibration
+    * - cal_black
+      - Unsigned Byte
+      - Flag to tell line sensor to use value for black calibration
+    * - sys
+      - Unsigned Byte
+      - Flag for IMU System Calibration Status
+    * - gyro
+      - Unsigned Byte
+      - Flag for IMU Gyro Calibration Status
+    * - acc
+      - Unsigned Byte
+      - Flag for IMU Accelerometer Calibration Status
+    * - mag
+      - Unsigned Byte
+      - Flag for IMU Magnetometer Calibration Status
+    * - enc_reset_L
+      - Unsigned Byte
+      - Flag to tell left encoder to reset position
+    * - enc_reset_R
+      - Unsigned Byte
+      - Flag to tell left encoder to reset position
+    
+    
+    
     
