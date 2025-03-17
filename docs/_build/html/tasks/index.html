@@ -34,7 +34,25 @@
             
   <section id="tasks">
 <h1>Tasks<a class="headerlink" href="#tasks" title="Link to this heading">¶</a></h1>
+<section id="task-structure">
+<h2>Task Structure<a class="headerlink" href="#task-structure" title="Link to this heading">¶</a></h2>
 <p>// Insert Task Diagram Pic</p>
+<p>We implemented 7 tasks:</p>
+<p>The “Course” Task keeps track of which segement of the course ROMI is in,
+taking in feedback data from the sensors, operating control loops, and sending
+setpoint velocities to the 2 motors.</p>
+<p>The 2 “Motor” Tasks implement closed loop velocity control on each motor
+individually, using feedback from the respective encoder.</p>
+<p>The “Bump” Task interfaces with the bump sensors, raising a flag if a bump
+occurs.</p>
+<p>The “IMU” Task handles the calibration of the IMU and outputs heading and yaw
+rate feedback.</p>
+<p>The “Line Sensor” Task handles the calibration of the Line Sensor Array and
+outputs centroid feedback.</p>
+</section>
+<section id="shares">
+<h2>Shares<a class="headerlink" href="#shares" title="Link to this heading">¶</a></h2>
+</section>
 </section>
 
 
@@ -65,7 +83,11 @@
 <script>document.getElementById('searchbox').style.display = "block"</script><h3>Navigation</h3>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../drivers/index.html">Hardware Drivers</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Tasks</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Tasks</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#task-structure">Task Structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#shares">Shares</a></li>
+</ul>
+</li>
 </ul>
 
 <div class="relations">
