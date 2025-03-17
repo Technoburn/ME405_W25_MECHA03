@@ -13,9 +13,13 @@ With this hardware, we are able to quickly and reliably navigate the predefined 
 
 STM32-L476RG Nucleo
 -------------------
-Romi is powered by an STM32-L476RG Nucleo microcontroller running MicroPython. This setup allows us to program Romi using object-oriented programming and cooperative multitasking with a scheduler, enabling us to run all tasks and drivers efficiently and simultaneously. The microcontroller provides a variety of interfaces, including PWM, analog, digital, timer, and more, allowing us to control all of Romi’s hardware from a single microcontroller.
+Romi is powered by an STM32-L476RG Nucleo microcontroller running MicroPython. This setup allows us to program Romi using object-oriented programming and cooperative multitasking with a scheduler, enabling us to run all tasks and drivers efficiently and effectively simultaneously. The microcontroller provides a variety of interfaces, including PWM, analog, digital, timer, and more, allowing us to control all of Romi’s hardware from a single microcontroller. Each of the pins is documented below.
 
 .. image:: _static/STM32.jpg
+   :width: 100%
+   :alt: Nucleo
+
+.. image:: _static/PinOut.png
    :width: 100%
    :alt: Nucleo
 
@@ -31,9 +35,9 @@ Motor Driver and Power Distribution Board for Romi Chassis
 -----------------------------------------------------------
 To control each motor independently, we use the Pololu Motor Driver and Power Distribution Board for the Romi Chassis (PN 3543). This board features two DRV8838 motor drivers, one for each of the chassis’s motors, allowing for two-channel motor driving. Each motor is controlled via a PWM signal and a direction pin, enabling a range of speed settings (from 0% to 100% effort) and control over the direction of rotation. This setup provides precise control over both motor speed and direction, facilitating independent operation of each motor.
 
-.. image:: _static/SOB.jpg
+.. image:: _static/Driver.jpg
    :width: 100%
-   :alt: Shoe of Brian
+   :alt: Motor Driver and Power Distribution Board for Romi Chassis
 
 Motor
 ----------
@@ -44,6 +48,35 @@ This motor setup ensures accurate speed control, allowing for smooth and predict
 .. image:: _static/Motor.jpg
    :width: 100%
    :alt: Shoe of Brian
+
+In an earlier lab, the two motors were characterized. Here are their transient responses, showcase how each motor behaves at different PWMs. 
+
+.. image:: _static/RightMRes.png
+   :width: 100%
+   :alt: Shoe of Brian
+
+.. image:: _static/LeftMResp.png
+   :width: 100%
+   :alt: Shoe of Brian
+
+ .. list-table::
+    :widths: 30 20 70
+    :header-rows: 1
+
+    * - 
+      - Left Motor
+      - Right Motor
+    * - Steady State Gain
+      - 4.24 [rad/V-s]
+      - 3.78 [rad/V-s]
+    * - Start Up Voltage
+      - 0.10 [V]
+      - 0.01 [V]
+    * - Time Constant
+      - 0.097 [s]
+      - 0.095 [s]
+
+
 
 Encoder 
 --------
