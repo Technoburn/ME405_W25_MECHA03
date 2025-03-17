@@ -10,7 +10,9 @@ Summary
 Over the course of a 10 week quarter, we worked through labs which built-up 
 mechatronics skills using a 2-wheeled robot ROMI.
 
-// Insert picture of RO MI
+.. image:: _static/Romi1.jpg
+   :width: 100%
+   :alt: ROMI
 
 We implemented multitasking programs to characterize motor constants, use an 
 Infra-red Line Sensor to follow a line in a circle, and interfaced with an IMU 
@@ -23,8 +25,8 @@ deductions for pushing cups outside of a designated zone.
 Course & Strategy
 -----------------
 .. image:: _static/Game_Track-1.png
-  :width: 100%
-  :alt: Game Track
+   :width: 100%
+   :alt: Game Track
 
 Our strategy was to cut as many corners as possible, seperating the track into 
 many straight-line segments. For each segement we controlled the heading of ROMI
