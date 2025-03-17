@@ -93,3 +93,26 @@ Shares
     * - theta_R
       - Float
       - Right Motor angular position feedback value from encoder
+
+Task Profile
+------------
+
+.. list-table::
+    :header-rows: 1
+
+    * - TASK
+      - PRI
+      - PERIOD
+      - RUNS
+      - AVG DUR
+      - MAX DUR
+      - AVG LATE
+      - MAX LATE
+    * - Task Left Motor
+      - 1
+      - 5.0
+      - 1064
+      - 0.237
+      - 1.454
+      - 0.958
+      - 9.871
