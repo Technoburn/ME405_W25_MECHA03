@@ -35,6 +35,36 @@
             
   <section id="line-sensor">
 <h1>LINE SENSOR<a class="headerlink" href="#line-sensor" title="Link to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="task_line_sensors.Task_Line_Sensor">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">task_line_sensors.</span></span><span class="sig-name descname"><span class="pre">Task_Line_Sensor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cal_white</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">task_share.Share</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cal_black</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">task_share.Share</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">centroid</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">task_share.Share</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">line_sensors</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../drivers/line_sensor.html#line_sensor.SensorArray" title="line_sensor.SensorArray"><span class="pre">SensorArray</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#task_line_sensors.Task_Line_Sensor" title="Link to this definition">¶</a></dt>
+<dd><p><cite>Task_Line_Sensor</cite> task manages the calibration and operation of a
+<cite>SensorArray</cite> used for line tracking. It calibrates the sensors for
+both white and black surfaces, then continuously reads sensor values to
+calculate the black line relative to the array.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>line_sensors</strong> – A <cite>SensorArray</cite> object that detects surface contrast.</p></li>
+<li><p><strong>cal_white</strong> – A share set by <cite>Task_Repl</cite> indicating when to perform
+white surface calibration.</p></li>
+<li><p><strong>cal_black</strong> – A share set by <cite>Task_Repl</cite> indicating when to perform
+black surface calibration.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return centroid<span class="colon">:</span></dt>
+<dd class="field-even"><p>Shares the position of the detected black line
+relative to the sensor array.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="task_line_sensors.Task_Line_Sensor.task">
+<span class="sig-name descname"><span class="pre">task</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#task_line_sensors.Task_Line_Sensor.task" title="Link to this definition">¶</a></dt>
+<dd><p>Generator Function to run implemented Finite-State Machine</p>
+</dd></dl>
+
+</dd></dl>
+
 </section>
 
 
@@ -74,7 +104,10 @@
 <li class="toctree-l3"><a class="reference internal" href="course.html">COURSE</a></li>
 <li class="toctree-l3"><a class="reference internal" href="motor.html">MOTOR</a></li>
 <li class="toctree-l3"><a class="reference internal" href="imu.html">IMU</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">LINE SENSOR</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">LINE SENSOR</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#task_line_sensors.Task_Line_Sensor"><code class="docutils literal notranslate"><span class="pre">Task_Line_Sensor</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="bump.html">BUMP</a></li>
 <li class="toctree-l3"><a class="reference internal" href="repl.html">REPL</a></li>
 </ul>

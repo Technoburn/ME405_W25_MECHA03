@@ -35,6 +35,37 @@
             
   <section id="imu">
 <h1>IMU<a class="headerlink" href="#imu" title="Link to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="task_imu.Task_IMU">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">task_imu.</span></span><span class="sig-name descname"><span class="pre">Task_IMU</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sys</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">task_share.Share</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gyro</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">task_share.Share</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">acc</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">task_share.Share</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mag</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">task_share.Share</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">heading</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">task_share.Share</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">yaw_rate</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">task_share.Share</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">imu</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../drivers/imu.html#imu.BNO055" title="imu.BNO055"><span class="pre">BNO055</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#task_imu.Task_IMU" title="Link to this definition">¶</a></dt>
+<dd><p>Initializes and continuously reads data from a BNO055 Inertial
+Measurement Unit (IMU). It ensures the IMU is calibrated and shares yaw
+rate and heading data with other tasks in the system.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>imu</strong> – An IMU sensor that provides orientation and angular
+velocity data.</p></li>
+<li><p><strong>sys</strong><strong>,</strong><strong>gyro</strong><strong>,</strong><strong>acc</strong><strong>,</strong><strong>mag</strong> – Shared objects that store calibration status
+for different IMU subsystems.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return heading<span class="colon">:</span></dt>
+<dd class="field-even"><p>Shares the IMU’s calculated <cite>heading angle</cite>.</p>
+</dd>
+<dt class="field-odd">Return yaw_rate<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Shares the <cite>yaw_rate</cite>, the angular velocity around the</p>
+</dd>
+</dl>
+<p>vertical axis.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="task_imu.Task_IMU.task">
+<span class="sig-name descname"><span class="pre">task</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#task_imu.Task_IMU.task" title="Link to this definition">¶</a></dt>
+<dd><p>Generator Function to run implemented Finite-State Machine</p>
+</dd></dl>
+
+</dd></dl>
+
 </section>
 
 
@@ -73,7 +104,10 @@
 <li class="toctree-l2 current"><a class="reference internal" href="index.html#contents">Contents</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="course.html">COURSE</a></li>
 <li class="toctree-l3"><a class="reference internal" href="motor.html">MOTOR</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">IMU</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">IMU</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#task_imu.Task_IMU"><code class="docutils literal notranslate"><span class="pre">Task_IMU</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="line_sensor.html">LINE SENSOR</a></li>
 <li class="toctree-l3"><a class="reference internal" href="bump.html">BUMP</a></li>
 <li class="toctree-l3"><a class="reference internal" href="repl.html">REPL</a></li>
