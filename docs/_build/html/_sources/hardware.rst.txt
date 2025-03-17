@@ -76,8 +76,6 @@ In an earlier lab, the two motors were characterized. Here are their transient r
      - 0.097 [s]
      - 0.095 [s]
 
-
-
 Encoder 
 --------
 The Romi Encoder Pair Kit (Pololu PN 3542) is used in the final assembly to provide precise wheel movement data. These encoders offer a resolution of approximately 1440 counts per revolution of Romi's wheels.
