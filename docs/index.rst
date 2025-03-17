@@ -40,6 +40,10 @@ the video of this time is shown below.
 .. video:: _static/mecha03_6_90_seconds.mp4
    :width: 100%
 
+.. image:: _static/ControlDiagram.png
+   :width: 100%
+   :alt: Control Diagram
+
 Contents
 --------
 

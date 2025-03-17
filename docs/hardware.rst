@@ -88,7 +88,7 @@ Reflectance Sensor Array Mounts
 --------------------------------
 Since our ROMI robot utilizes a 13-sensor light array, there was no convenient mounting location on the chassis. To resolve this, a custom 3D-printed bracket was designed to securely attach the sensor. The bracket was modeled in SolidWorks and 3D-printed using PLA filament. It is mounted to the robot using M2 fasteners and stand-offs, ensuring a stable and properly positioned sensor for accurate line detection.   
 
-.. image:: _static/LightArrayConnectorCAD.jpg
+.. image:: _static/LightArrayConnectorCAD.png
    :width: 100%
    :alt: Reflectance Array
 
@@ -104,7 +104,7 @@ Voltage Divider
 ------------------
 The purpose of this is voltage divider is to read the voltage the batteries are suppling to the motor driver. Since the voltage could read as high as 8 volts, a voltage divider is used to reduce the voltage going to a ADC pin to less than 3.3 volts in order to not damage the Nucleo. The following circuit is used to the voltage from the motor driver to the Nucleo the same, while also providing a third pin at a reduced voltage.
 
-.. image:: _static/Circuit.jpg
+.. image:: _static/Circuit.png
    :width: 100%
    :alt: Voltage Divider Circuit
 
