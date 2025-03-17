@@ -64,7 +64,24 @@ Shares
     * - enc_reset_R
       - Unsigned Byte
       - Flag to tell left encoder to reset position
-    
-    
-    
-    
+    * - centroid
+      - Float
+      - Centroid feedback value from Line Sensor Array
+    * - heading
+      - Float
+      - Heading feedback value from IMU
+    * - yaw_rate
+      - Float
+      - Yaw Rate feedback value from IMU
+    * - Omega_L
+      - Float
+      - Left Motor angular velocity setpoint
+    * - Omega_R
+      - Float
+      - Right Motor angular velocity setpoint
+    * - theta_L
+      - Float
+      - Left Motor angular position feedback value from encoder
+    * - theta_R
+      - Float
+      - Right Motor angular position feedback value from encoder
