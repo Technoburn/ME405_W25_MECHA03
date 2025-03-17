@@ -28,8 +28,8 @@ Shares
 ------
 
 .. list-table::
-   :widths: 30 20 70
-   :header-rows: 1
+    :widths: 30 20 70
+    :header-rows: 1
 
     * - Variable
       - Data Type
