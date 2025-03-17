@@ -30,7 +30,8 @@ based either on line following or IMU heading and measured the distance traveled
 to determine when to switch to the next line segment. This strategy allowed us 
 to achieve the fastest time in the class, consitently achieving times of
 approximately 7 seconds and pushing both cups out of their zones resulting in a 
--10 second deduction. Our fastest time, including deductions was -3.10 seconds.
+-10 second deduction. Our fastest time, including deductions was -3.10 seconds, 
+the video of this time is shown below.
 
 .. video:: _static/mecha03_6_90_seconds.mp4
    :width: 100%
