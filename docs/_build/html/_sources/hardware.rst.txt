@@ -21,7 +21,7 @@ Romi is powered by an STM32-L476RG Nucleo microcontroller running MicroPython. T
 
 .. image:: _static/PinOut.png
    :width: 100%
-   :alt: Nucleo
+   :alt: Nucleo Pinout
 
 Shoe of Brian
 ---------------
@@ -47,17 +47,17 @@ This motor setup ensures accurate speed control, allowing for smooth and predict
 
 .. image:: _static/Motor.jpg
    :width: 100%
-   :alt: Shoe of Brian
+   :alt: Motor
 
 In an earlier lab, the two motors were characterized. Here are their transient responses, showcase how each motor behaves at different PWMs. 
 
 .. image:: _static/RightMRes.png
    :width: 100%
-   :alt: Shoe of Brian
+   :alt: Right Motor Response
 
 .. image:: _static/LeftMResp.png
    :width: 100%
-   :alt: Shoe of Brian
+   :alt: Left Motor Response
 
 .. list-table::
    :widths: 30 20 70
@@ -85,7 +85,7 @@ This setup is particularly useful for tracking translational movement, allowing 
 
 .. image:: _static/Encoder.jpg
    :width: 100%
-   :alt: Shoe of Brian
+   :alt: Encoder
 
 Bump Sensor
 ------------
@@ -95,7 +95,7 @@ In addition to detecting when ROMI makes contact with the wall after checkpoint 
 
 .. image:: _static/Bump.jpg
    :width: 100%
-   :alt: Reflectance Array
+   :alt: Bump Sensor
 
 Reflectance Sensor Array
 --------------------------
@@ -113,7 +113,7 @@ In our implementation, we utilized Euler angles to periodically update the syste
 
 .. image:: _static/ArrayConnector.jpg
    :width: 100%
-   :alt: Reflectance Array
+   :alt: Line Sensor and IMU
 
 Reflectance Sensor Array Mounts
 --------------------------------
@@ -121,7 +121,7 @@ Since our ROMI robot utilizes a 13-sensor light array, there was no convenient m
 
 .. image:: _static/LightArrayConnectorCAD.png
    :width: 100%
-   :alt: Reflectance Array
+   :alt: Reflectance Array Mounts
 
 Bluetooth Module
 ----------------
@@ -129,7 +129,7 @@ For wireless communication, we utilized an HC-05 Bluetooth module. While this mo
 
 .. image:: _static/BT.jpg
    :width: 100%
-   :alt: Reflectance Array
+   :alt: Bluetooth Module
 
 Voltage Divider
 ------------------
@@ -138,7 +138,6 @@ The purpose of this is voltage divider is to read the voltage the batteries are 
 .. image:: _static/Circuit.png
    :width: 100%
    :alt: Voltage Divider Circuit
-
 
 Since the voltage divider follows the relation below, we can both ensure that the ADC pin doesn't exceed 3.3 volts, and calculate the equivalent voltage coming from the motor driver. 
 

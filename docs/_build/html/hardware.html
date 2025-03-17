@@ -47,7 +47,7 @@
 <p>Romi is powered by an STM32-L476RG Nucleo microcontroller running MicroPython. This setup allows us to program Romi using object-oriented programming and cooperative multitasking with a scheduler, enabling us to run all tasks and drivers efficiently and effectively simultaneously. The microcontroller provides a variety of interfaces, including PWM, analog, digital, timer, and more, allowing us to control all of Romi’s hardware from a single microcontroller. Each of the pins is documented below.</p>
 <a class="reference internal image-reference" href="_images/STM32.jpg"><img alt="Nucleo" src="_images/STM32.jpg" style="width: 100%;" />
 </a>
-<a class="reference internal image-reference" href="_images/PinOut.png"><img alt="Nucleo" src="_images/PinOut.png" style="width: 100%;" />
+<a class="reference internal image-reference" href="_images/PinOut.png"><img alt="Nucleo Pinout" src="_images/PinOut.png" style="width: 100%;" />
 </a>
 </section>
 <section id="shoe-of-brian">
@@ -66,12 +66,12 @@
 <h2>Motor<a class="headerlink" href="#motor" title="Link to this heading">¶</a></h2>
 <p>Romi’s movement is powered by two 120:1 Mini Plastic Gearmotors HP with an offset 3mm D-shaft output and an extended motor shaft. These motors feature a 120:1 gear reduction, which enables precise movement and accurate encoder positioning. The motors are driven using Pulse Width Modulation (PWM), allowing control over the effective voltage applied to each motor. By dynamically adjusting this voltage, Romi can precisely regulate the angular velocity of each wheel using a closed-loop control system.</p>
 <p>This motor setup ensures accurate speed control, allowing for smooth and predictable motion while maintaining precise position tracking for complex navigation. With the ability to drive bidirectionally, Romi can reverse or adjust its path as needed. By integrating these motors with encoders and a PID controller, Romi achieves stable and responsive movement, which is crucial for line following and waypoint navigation.</p>
-<a class="reference internal image-reference" href="_images/Motor.jpg"><img alt="Shoe of Brian" src="_images/Motor.jpg" style="width: 100%;" />
+<a class="reference internal image-reference" href="_images/Motor.jpg"><img alt="Motor" src="_images/Motor.jpg" style="width: 100%;" />
 </a>
 <p>In an earlier lab, the two motors were characterized. Here are their transient responses, showcase how each motor behaves at different PWMs.</p>
-<a class="reference internal image-reference" href="_images/RightMRes.png"><img alt="Shoe of Brian" src="_images/RightMRes.png" style="width: 100%;" />
+<a class="reference internal image-reference" href="_images/RightMRes.png"><img alt="Right Motor Response" src="_images/RightMRes.png" style="width: 100%;" />
 </a>
-<a class="reference internal image-reference" href="_images/LeftMResp.png"><img alt="Shoe of Brian" src="_images/LeftMResp.png" style="width: 100%;" />
+<a class="reference internal image-reference" href="_images/LeftMResp.png"><img alt="Left Motor Response" src="_images/LeftMResp.png" style="width: 100%;" />
 </a>
 <table class="docutils align-default">
 <colgroup>
@@ -106,14 +106,14 @@
 <p>The Romi Encoder Pair Kit (Pololu PN 3542) is used in the final assembly to provide precise wheel movement data. These encoders offer a resolution of approximately 1440 counts per revolution of Romi’s wheels.
 The encoders are dual-channel Hall effect sensor boards, which are soldered directly to the back of each motor and connected to the motor driver and power distribution board of the Romi chassis.</p>
 <p>This setup is particularly useful for tracking translational movement, allowing us to determine how far each wheel has traveled and measuring angular velocity of each wheel in real time. By using these encoders, Romi can achieve precise movement control, improving accuracy in navigation.</p>
-<a class="reference internal image-reference" href="_images/Encoder.jpg"><img alt="Shoe of Brian" src="_images/Encoder.jpg" style="width: 100%;" />
+<a class="reference internal image-reference" href="_images/Encoder.jpg"><img alt="Encoder" src="_images/Encoder.jpg" style="width: 100%;" />
 </a>
 </section>
 <section id="bump-sensor">
 <h2>Bump Sensor<a class="headerlink" href="#bump-sensor" title="Link to this heading">¶</a></h2>
 <p>To detect collisions, two Right Bumper Switch Assemblies (Pololu item #: 3674) were installed on the front of ROMI. Each pin of the bump sensor array is initialized as a pull-down input, allowing the system to periodically check for button presses. A total of six bump switches are active, providing feedback on forward collisions.</p>
 <p>In addition to detecting when ROMI makes contact with the wall after checkpoint 5, these bump sensors serve as a safety feature. If ROMI veers off course and an unexpected bumper switch is triggered, indicating unintended contact, the program will terminate, preventing potential damage to the robot.</p>
-<a class="reference internal image-reference" href="_images/Bump.jpg"><img alt="Reflectance Array" src="_images/Bump.jpg" style="width: 100%;" />
+<a class="reference internal image-reference" href="_images/Bump.jpg"><img alt="Bump Sensor" src="_images/Bump.jpg" style="width: 100%;" />
 </a>
 </section>
 <section id="reflectance-sensor-array">
@@ -126,19 +126,19 @@ The encoders are dual-channel Hall effect sensor boards, which are soldered dire
 <h2>IMU<a class="headerlink" href="#imu" title="Link to this heading">¶</a></h2>
 <p>To provide heading and yaw rate information to Romi, we used Adafruit’s BNO055 Absolute Orientation Sensor, an Inertial Measurement Unit (IMU). This 9-DOF sensor communicates via the I2C protocol and features embedded sensor fusion modes, allowing it to output quaternions, Euler angles, or vectors.</p>
 <p>In our implementation, we utilized Euler angles to periodically update the system with heading and yaw rate information. This was especially critical when Romi relied solely on heading for navigation.</p>
-<a class="reference internal image-reference" href="_images/ArrayConnector.jpg"><img alt="Reflectance Array" src="_images/ArrayConnector.jpg" style="width: 100%;" />
+<a class="reference internal image-reference" href="_images/ArrayConnector.jpg"><img alt="Line Sensor and IMU" src="_images/ArrayConnector.jpg" style="width: 100%;" />
 </a>
 </section>
 <section id="reflectance-sensor-array-mounts">
 <h2>Reflectance Sensor Array Mounts<a class="headerlink" href="#reflectance-sensor-array-mounts" title="Link to this heading">¶</a></h2>
 <p>Since our ROMI robot utilizes a 13-sensor light array, there was no convenient mounting location on the chassis. To resolve this, a custom 3D-printed bracket was designed to securely attach the sensor. The bracket was modeled in SolidWorks and 3D-printed using PLA filament. It is mounted to the robot using M2 fasteners and stand-offs, ensuring a stable and properly positioned sensor for accurate line detection.</p>
-<a class="reference internal image-reference" href="_images/LightArrayConnectorCAD.png"><img alt="Reflectance Array" src="_images/LightArrayConnectorCAD.png" style="width: 100%;" />
+<a class="reference internal image-reference" href="_images/LightArrayConnectorCAD.png"><img alt="Reflectance Array Mounts" src="_images/LightArrayConnectorCAD.png" style="width: 100%;" />
 </a>
 </section>
 <section id="bluetooth-module">
 <h2>Bluetooth Module<a class="headerlink" href="#bluetooth-module" title="Link to this heading">¶</a></h2>
 <p>For wireless communication, we utilized an HC-05 Bluetooth module. While this module did not allow us to flash new code to Romi via Bluetooth, it was highly effective for serial communication. This capability was particularly useful for motor parameterization, including determining time constants and gains, reflectance sensor calibration, and general course execution. By leveraging Bluetooth connectivity, we could tune and monitor Romi’s performance without requiring a wired connection.</p>
-<a class="reference internal image-reference" href="_images/BT.jpg"><img alt="Reflectance Array" src="_images/BT.jpg" style="width: 100%;" />
+<a class="reference internal image-reference" href="_images/BT.jpg"><img alt="Bluetooth Module" src="_images/BT.jpg" style="width: 100%;" />
 </a>
 </section>
 <section id="voltage-divider">
