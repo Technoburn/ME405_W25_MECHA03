@@ -23,7 +23,7 @@ deductions for pushing cups outside of a designated zone.
 Course & Strategy
 -----------------
 .. image:: _static/Game_Track-1.png
-  :width: 400
+  :width: 100%
   :alt: Game Track
 
 Our strategy was to cut as many corners as possible, seperating the track into 
