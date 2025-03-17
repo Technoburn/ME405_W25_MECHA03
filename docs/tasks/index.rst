@@ -31,6 +31,10 @@ Shares
    :widths: 30 20 70
    :header-rows: 1
 
-   * - Shared Variable
-     - Data Type
-     - Purpose
+    * - Variable
+      - Data Type
+      - Purpose
+    * - run
+      - Unsigned Byte
+      - Flag to signal when ROMI should begin running the course
+    
