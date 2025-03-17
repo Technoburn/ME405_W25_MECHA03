@@ -6,7 +6,7 @@ Task Structure
 
 // Insert Task Diagram Pic
 
-We implemented 7 tasks:
+Overall 7 Tasks are implemented: 
 
 The "Course" Task keeps track of which segement of the course ROMI is in, 
 taking in feedback data from the sensors, operating control loops, and sending 
@@ -27,3 +27,10 @@ outputs centroid feedback.
 Shares
 ------
 
+.. list-table::
+   :widths: 30 20 70
+   :header-rows: 1
+
+   * - Shared Variable
+     - Data Type
+     - Purpose
