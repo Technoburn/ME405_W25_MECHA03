@@ -12,7 +12,7 @@ With this hardware, we are able to quickly and reliably navigate the predefined 
    :alt: ROMI
 
 STM32-L476RG Nucleo
--------------
+-------------------
 Romi is powered by an STM32-L476RG Nucleo microcontroller running MicroPython. This setup allows us to program Romi using object-oriented programming and cooperative multitasking with a scheduler, enabling us to run all tasks and drivers efficiently and simultaneously. The microcontroller provides a variety of interfaces, including PWM, analog, digital, timer, and more, allowing us to control all of Romi’s hardware from a single microcontroller.
 
 Shoe of Brian
