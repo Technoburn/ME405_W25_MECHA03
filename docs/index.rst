@@ -45,6 +45,8 @@ Contents
 
 .. toctree::
    :maxdepth: 2
-
+   
+   hardware
    drivers/index
    tasks/index
+   
