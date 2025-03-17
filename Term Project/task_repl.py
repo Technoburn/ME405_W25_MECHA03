@@ -43,6 +43,7 @@ class Task_Repl:
         self.state = self.S0_INIT
 
     def task(self):
+        '''Generator Function to run implemented Finite-State Machine'''
 
         while True:
             collect() # Run Garbage Collection

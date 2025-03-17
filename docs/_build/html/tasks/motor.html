@@ -35,6 +35,41 @@
             
   <section id="motor">
 <h1>MOTOR<a class="headerlink" href="#motor" title="Link to this heading">¶</a></h1>
+<a class="reference internal image-reference" href="../_images/MOTORFSM.PNG"><img alt="MOTOR Task Finite-State Machine" src="../_images/MOTORFSM.PNG" style="width: 100%;" />
+</a>
+<dl class="py class">
+<dt class="sig sig-object py" id="task_motor.Task_Motor">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">task_motor.</span></span><span class="sig-name descname"><span class="pre">Task_Motor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Omega</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">task_share.Share</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">enc_reset</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">task_share.Share</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theta</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">task_share.Share</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">motor</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../drivers/motor.html#motor.Motor" title="motor.Motor"><span class="pre">Motor</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">enc</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../drivers/encoder.html#encoder.Encoder" title="encoder.Encoder"><span class="pre">Encoder</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">PID</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../drivers/controller.html#controller.ClosedLoop" title="controller.ClosedLoop"><span class="pre">ClosedLoop</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">batt</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../drivers/voltage.html#voltage.Voltage" title="voltage.Voltage"><span class="pre">Voltage</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#task_motor.Task_Motor" title="Link to this definition">¶</a></dt>
+<dd><p>The <cite>Task_Motor</cite> task manages motor control using a closed-loop PID
+controller. It continuously updates encoder readings, shares wheel
+position, and calculates actuation voltage based on the motor’s
+velocity setpoint. The actuation voltage is converted into a PWM
+effort percentage, considering the current battery voltage.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>Omega</strong> – A <cite>share</cite> of the desired motor velocity in rad/s.</p></li>
+<li><p><strong>enc_reset</strong> – A <cite>share</cite> that signals when to reset the encoder.</p></li>
+<li><p><strong>motor</strong> – A <cite>Motor</cite> object to be controlled</p></li>
+<li><p><strong>enc</strong> – A <cite>Encoder</cite> object, providing position and velocity
+feedback.</p></li>
+<li><p><strong>PID</strong> – A <cite>ClosedLoop</cite> controller object that computes the
+necessary PWM to achieve the desired motor velocity.</p></li>
+<li><p><strong>batt</strong> – A <cite>Voltage</cite> object that reads the current battery voltage.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return theta<span class="colon">:</span></dt>
+<dd class="field-even"><p>A <cite>share</cite> of the calculated wheel position in radians.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="task_motor.Task_Motor.task">
+<span class="sig-name descname"><span class="pre">task</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#task_motor.Task_Motor.task" title="Link to this definition">¶</a></dt>
+<dd><p>Generator Function to run implemented Finite-State Machine</p>
+</dd></dl>
+
+</dd></dl>
+
 </section>
 
 
@@ -64,11 +99,24 @@
 </search>
 <script>document.getElementById('searchbox').style.display = "block"</script><h3>Navigation</h3>
 <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../hardware.html">Hardware</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../drivers/index.html">Hardware Drivers</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Tasks</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="index.html#task-structure">Task Structure</a></li>
 <li class="toctree-l2"><a class="reference internal" href="index.html#shares">Shares</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="index.html#task-profile">Task Profile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#task-profile">Task Profile</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html#contents">Contents</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="course.html">COURSE</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">MOTOR</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#task_motor.Task_Motor"><code class="docutils literal notranslate"><span class="pre">Task_Motor</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="imu.html">IMU</a></li>
+<li class="toctree-l3"><a class="reference internal" href="line_sensor.html">LINE SENSOR</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bump.html">BUMP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="repl.html">REPL</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>

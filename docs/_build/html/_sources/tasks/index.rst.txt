@@ -169,6 +169,9 @@ Overall our task structure follows our desired profile with most tasks running
 fairly on-time. Some of the lower priority tasks run late, such as the REPL task
 , however these tasks are not time sensitive so this is acceptable.
 
+Contents
+--------
+
 .. toctree::
 
     course

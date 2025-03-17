@@ -31,7 +31,7 @@ if 'sphinx' in sys.modules:
     time.ticks_diff = MagicMock(return_value=12345678)
     time.ticks_add = MagicMock(return_value=12345678)
 
-autodoc_mock_imports = ['pyb','time','micropython']
+autodoc_mock_imports = ['pyb','time','micropython','task_share','nb_input']
 autoclass_content = 'both'
 
 templates_path = ['_templates']

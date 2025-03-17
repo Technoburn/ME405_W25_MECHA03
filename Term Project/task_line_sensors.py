@@ -36,6 +36,7 @@ class Task_Line_Sensor:
         self.state = self.S0_WHITE
 
     def task(self):
+        '''Generator Function to run implemented Finite-State Machine'''
 
         while True:
             if self.state == self.S0_WHITE:

@@ -34,6 +34,45 @@
             
   <section id="repl">
 <h1>REPL<a class="headerlink" href="#repl" title="Link to this heading">¶</a></h1>
+<a class="reference internal image-reference" href="../_images/REPLFSM.PNG"><img alt="REPL Task Finite-State Machine" src="../_images/REPLFSM.PNG" style="width: 100%;" />
+</a>
+<dl class="py class">
+<dt class="sig sig-object py" id="task_repl.Task_Repl">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">task_repl.</span></span><span class="sig-name descname"><span class="pre">Task_Repl</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sys</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">task_share.Share</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gyro</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">task_share.Share</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">acc</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">task_share.Share</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mag</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">task_share.Share</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">run</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">task_share.Share</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cal_white</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">task_share.Share</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cal_black</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">task_share.Share</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#task_repl.Task_Repl" title="Link to this definition">¶</a></dt>
+<dd><p>The <cite>Task_Repl</cite> task manages non-blocking Bluetooth communication,
+ensures IMU and line sensor calibration, and signals other tasks when
+to start running.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sys</strong> – A <cite>share</cite> for IMU system calibration status.</p></li>
+<li><p><strong>gyro</strong> – A <cite>share</cite> for  IMU gyroscope calibration status.</p></li>
+<li><p><strong>acc</strong> – A <cite>share</cite> for IMU accelerometer calibration status.</p></li>
+<li><p><strong>mag</strong> – A <cite>share</cite> for IMU magnetometer calibration status.</p></li>
+<li><p><strong>BT_ser</strong> – Bluetooth serial interface for non-blocking input created
+in <cite>boot.py</cite>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return run<span class="colon">:</span></dt>
+<dd class="field-even"><p>A <cite>share</cite> indicating when to start running the motors.</p>
+</dd>
+<dt class="field-odd">Return cal_white<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A <cite>share</cite> signaling when to calibrate white sensor
+values.</p>
+</dd>
+<dt class="field-even">Return cal_black<span class="colon">:</span></dt>
+<dd class="field-even"><p>A <cite>share</cite> signaling when to calibrate black sensor
+values.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="task_repl.Task_Repl.task">
+<span class="sig-name descname"><span class="pre">task</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#task_repl.Task_Repl.task" title="Link to this definition">¶</a></dt>
+<dd><p>Generator Function to run implemented Finite-State Machine</p>
+</dd></dl>
+
+</dd></dl>
+
 </section>
 
 
@@ -63,11 +102,24 @@
 </search>
 <script>document.getElementById('searchbox').style.display = "block"</script><h3>Navigation</h3>
 <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../hardware.html">Hardware</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../drivers/index.html">Hardware Drivers</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Tasks</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="index.html#task-structure">Task Structure</a></li>
 <li class="toctree-l2"><a class="reference internal" href="index.html#shares">Shares</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="index.html#task-profile">Task Profile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#task-profile">Task Profile</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html#contents">Contents</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="course.html">COURSE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="motor.html">MOTOR</a></li>
+<li class="toctree-l3"><a class="reference internal" href="imu.html">IMU</a></li>
+<li class="toctree-l3"><a class="reference internal" href="line_sensor.html">LINE SENSOR</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bump.html">BUMP</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">REPL</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#task_repl.Task_Repl"><code class="docutils literal notranslate"><span class="pre">Task_Repl</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>

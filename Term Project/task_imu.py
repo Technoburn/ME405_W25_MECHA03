@@ -37,6 +37,7 @@ class Task_IMU:
         self.state = self.S0_INIT
 
     def task(self):
+        '''Generator Function to run implemented Finite-State Machine'''
 
         while True:
             if self.state == self.S0_INIT:
