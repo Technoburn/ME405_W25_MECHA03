@@ -59,24 +59,22 @@ In an earlier lab, the two motors were characterized. Here are their transient r
    :width: 100%
    :alt: Shoe of Brian
 
- .. list-table::
-    :widths: 30 20 70
-    :header-rows: 1
+.. list-table::
+   :widths: 30 20 70
+   :header-rows: 1
 
-    * - 
-      - Left Motor
-      - Right Motor
-    * - Steady State Gain
-      - 4.24 [rad/V-s]
-      - 3.78 [rad/V-s]
-    * - Start Up Voltage
-      - 0.10 [V]
-      - 0.01 [V]
-    * - Time Constant
-      - 0.097 [s]
-      - 0.095 [s]
-
-
+   * - Motor
+     - Left
+     - Right
+   * - Steady State Gain
+     - 4.24 [rad/V-s]
+     - 3.78 [rad/V-s]
+   * - Start Up Voltage
+     - 0.10 [V]
+     - 0.01 [V]
+   * - Time Constant
+     - 0.097 [s]
+     - 0.095 [s]
 
 Encoder 
 --------

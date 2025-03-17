@@ -44,8 +44,10 @@
 </section>
 <section id="stm32-l476rg-nucleo">
 <h2>STM32-L476RG Nucleo<a class="headerlink" href="#stm32-l476rg-nucleo" title="Link to this heading">¶</a></h2>
-<p>Romi is powered by an STM32-L476RG Nucleo microcontroller running MicroPython. This setup allows us to program Romi using object-oriented programming and cooperative multitasking with a scheduler, enabling us to run all tasks and drivers efficiently and simultaneously. The microcontroller provides a variety of interfaces, including PWM, analog, digital, timer, and more, allowing us to control all of Romi’s hardware from a single microcontroller.</p>
+<p>Romi is powered by an STM32-L476RG Nucleo microcontroller running MicroPython. This setup allows us to program Romi using object-oriented programming and cooperative multitasking with a scheduler, enabling us to run all tasks and drivers efficiently and effectively simultaneously. The microcontroller provides a variety of interfaces, including PWM, analog, digital, timer, and more, allowing us to control all of Romi’s hardware from a single microcontroller. Each of the pins is documented below.</p>
 <a class="reference internal image-reference" href="_images/STM32.jpg"><img alt="Nucleo" src="_images/STM32.jpg" style="width: 100%;" />
+</a>
+<a class="reference internal image-reference" href="_images/PinOut.png"><img alt="Nucleo" src="_images/PinOut.png" style="width: 100%;" />
 </a>
 </section>
 <section id="shoe-of-brian">
@@ -57,7 +59,7 @@
 <section id="motor-driver-and-power-distribution-board-for-romi-chassis">
 <h2>Motor Driver and Power Distribution Board for Romi Chassis<a class="headerlink" href="#motor-driver-and-power-distribution-board-for-romi-chassis" title="Link to this heading">¶</a></h2>
 <p>To control each motor independently, we use the Pololu Motor Driver and Power Distribution Board for the Romi Chassis (PN 3543). This board features two DRV8838 motor drivers, one for each of the chassis’s motors, allowing for two-channel motor driving. Each motor is controlled via a PWM signal and a direction pin, enabling a range of speed settings (from 0% to 100% effort) and control over the direction of rotation. This setup provides precise control over both motor speed and direction, facilitating independent operation of each motor.</p>
-<a class="reference internal image-reference" href="_images/SOB.jpg"><img alt="Shoe of Brian" src="_images/SOB.jpg" style="width: 100%;" />
+<a class="reference internal image-reference" href="_images/Driver.jpg"><img alt="Motor Driver and Power Distribution Board for Romi Chassis" src="_images/Driver.jpg" style="width: 100%;" />
 </a>
 </section>
 <section id="motor">
@@ -66,6 +68,38 @@
 <p>This motor setup ensures accurate speed control, allowing for smooth and predictable motion while maintaining precise position tracking for complex navigation. With the ability to drive bidirectionally, Romi can reverse or adjust its path as needed. By integrating these motors with encoders and a PID controller, Romi achieves stable and responsive movement, which is crucial for line following and waypoint navigation.</p>
 <a class="reference internal image-reference" href="_images/Motor.jpg"><img alt="Shoe of Brian" src="_images/Motor.jpg" style="width: 100%;" />
 </a>
+<p>In an earlier lab, the two motors were characterized. Here are their transient responses, showcase how each motor behaves at different PWMs.</p>
+<a class="reference internal image-reference" href="_images/RightMRes.png"><img alt="Shoe of Brian" src="_images/RightMRes.png" style="width: 100%;" />
+</a>
+<a class="reference internal image-reference" href="_images/LeftMResp.png"><img alt="Shoe of Brian" src="_images/LeftMResp.png" style="width: 100%;" />
+</a>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25.0%" />
+<col style="width: 16.7%" />
+<col style="width: 58.3%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Motor</p></th>
+<th class="head"><p>Left</p></th>
+<th class="head"><p>Right</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Steady State Gain</p></td>
+<td><p>4.24 [rad/V-s]</p></td>
+<td><p>3.78 [rad/V-s]</p></td>
+</tr>
+<tr class="row-odd"><td><p>Start Up Voltage</p></td>
+<td><p>0.10 [V]</p></td>
+<td><p>0.01 [V]</p></td>
+</tr>
+<tr class="row-even"><td><p>Time Constant</p></td>
+<td><p>0.097 [s]</p></td>
+<td><p>0.095 [s]</p></td>
+</tr>
+</tbody>
+</table>
 </section>
 <section id="encoder">
 <h2>Encoder<a class="headerlink" href="#encoder" title="Link to this heading">¶</a></h2>
