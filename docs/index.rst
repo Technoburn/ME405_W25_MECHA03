@@ -40,6 +40,15 @@ the video of this time is shown below.
 .. video:: _static/mecha03_6_90_seconds.mp4
    :width: 100%
 
+We implemented a cascaded control scheme which allowed for high performance 
+control of the motor velocities, yaw rate, and heading. Each motor is controlled
+individually to ensure that requested motor velocities are quickly realized.
+Next the yaw rate is measured using the IMU and controlled to allow for precise
+control of the rate ROMI turns enabling quick and accurate turns. Finally the 
+heading or centroid is controlled with feedback from the IMU or line sensor, 
+the output of the controller is then the desired yaw rate fed into the yaw rate
+controller.
+
 .. image:: _static/ControlDiagram.png
    :width: 100%
    :alt: Control Diagram

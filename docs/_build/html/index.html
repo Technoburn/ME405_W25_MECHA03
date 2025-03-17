@@ -62,7 +62,15 @@ to achieve the fastest time in the class, consitently achieving times of
 approximately 7 seconds and pushing both cups out of their zones resulting in a
 -10 second deduction. Our fastest time, including deductions was -3.10 seconds,
 the video of this time is shown below.</p>
-<div  class="sphinx-contrib-video-container align-left"><video controls="True" preload="auto" width="100%"><source src="_images/mecha03_6_90_seconds.mp4" type="video/mp4"></video></div><a class="reference internal image-reference" href="_images/ControlDiagram.png"><img alt="Control Diagram" src="_images/ControlDiagram.png" style="width: 100%;" />
+<div  class="sphinx-contrib-video-container align-left"><video controls="True" preload="auto" width="100%"><source src="_images/mecha03_6_90_seconds.mp4" type="video/mp4"></video></div><p>We implemented a cascaded control scheme which allowed for high performance
+control of the motor velocities, yaw rate, and heading. Each motor is controlled
+individually to ensure that requested motor velocities are quickly realized.
+Next the yaw rate is measured using the IMU and controlled to allow for precise
+control of the rate ROMI turns enabling quick and accurate turns. Finally the
+heading or centroid is controlled with feedback from the IMU or line sensor,
+the output of the controller is then the desired yaw rate fed into the yaw rate
+controller.</p>
+<a class="reference internal image-reference" href="_images/ControlDiagram.png"><img alt="Control Diagram" src="_images/ControlDiagram.png" style="width: 100%;" />
 </a>
 </section>
 <section id="contents">
