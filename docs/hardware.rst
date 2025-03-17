@@ -12,7 +12,7 @@ With this hardware, we are able to quickly and reliably navigate the predefined 
    :alt: ROMI
 
 STM32-L476RG Nucleo
--------------
+-------------------
 Romi is powered by an STM32-L476RG Nucleo microcontroller running MicroPython. This setup allows us to program Romi using object-oriented programming and cooperative multitasking with a scheduler, enabling us to run all tasks and drivers efficiently and simultaneously. The microcontroller provides a variety of interfaces, including PWM, analog, digital, timer, and more, allowing us to control all of Romi’s hardware from a single microcontroller.
 
 Shoe of Brian
@@ -68,7 +68,7 @@ Voltage Divider
 ------------------
 The purpose of this is voltage divider is to read the voltage the batteries are suppling to the motor driver. Since the voltage could read as high as 8 volts, a voltage divider is used to reduce the voltage going to a ADC pin to less than 3.3 volts in order to not damage the Nucleo. The following circuit is used to the voltage from the motor driver to the Nucleo the same, while also providing a third pin at a reduced voltage.
 
-*insert circuit
+// insert circuit
 
 Since the voltage divider follows the relation below, we can both ensure that the ADC pin doesn't exceed 3.3 volts, and calculate the equivalent voltage coming from the motor driver. 
 
@@ -84,8 +84,8 @@ To account for additional resistances in the system, these values may be adjuste
 
 Vss = Vpin * 3.12 * 3.0 / 4095 
 
-*insert open pieces
+// insert open pieces
 
 The circuit can be quickly made using a prototype board and can be inserted in the connection from the motor driver, to Vin to the Nucleo. The voltage divider should be wrapped in insulating tape to prevent unwanted shorts. 
 
-*insert covered
+// insert covered
