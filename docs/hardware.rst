@@ -111,17 +111,17 @@ The purpose of this is voltage divider is to read the voltage the batteries are 
 
 Since the voltage divider follows the relation below, we can both ensure that the ADC pin doesn't exceed 3.3 volts, and calculate the equivalent voltage coming from the motor driver. 
 
-VADC = (R2 / R2 + R1 ) * Vin
+V_ADC = (R2 / R2 + R1 ) * V_in
 
 In our case we used two resistors in series totaling a resistance of 11.11 kΩs for R1, and one resistor with a resistance of 5.54 kΩs. This would results in a max ADC voltage reading of 2.7 volts when suppled with input voltage of 8.4 volts. 
 
 Inside voltage.py, the actual motor driver voltage is calculated using:
 
-Vss = Vpin * 3.3 * ((R2 + R1)/R2) / 4095
+V_ss = V_pin * 3.3 * ((R2 + R1)/R2) / 4095
 
 To account for additional resistances in the system, these values may be adjusted additionally. That can be done by measuring the actual voltage coming from the motor driver and comparing to the ADC read value. The following equation worked well for our particular case:
 
-Vss = Vpin * 3.12 * 3.0 / 4095 
+V_ss = V_pin * 3.12 * 3.0 / 4095 
 
 .. image:: _static/V_Divider1.jpg
    :width: 100%
