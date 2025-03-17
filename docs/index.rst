@@ -44,7 +44,7 @@ Contents
 --------
 
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 4
    
    hardware
    drivers/index
