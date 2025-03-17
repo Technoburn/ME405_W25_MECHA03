@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>COURSE &#8212; MECHA03 ROMI 0.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=5ecbeea2" />
+    <link rel="stylesheet" type="text/css" href="../_static/basic.css?v=b08954a9" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=27fed22d" />
+    <script src="../_static/documentation_options.js?v=837179f8"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="&lt;no title&gt;" href="motor.html" />
+    <link rel="prev" title="Tasks" href="index.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="course">
+<h1>COURSE<a class="headerlink" href="#course" title="Link to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="task_course.Task_Course">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">task_course.</span></span><span class="sig-name descname"><span class="pre">Task_Course</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">run</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Share</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Omega_L</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Share</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Omega_R</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Share</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">heading</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Share</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">yaw_rate</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Share</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">centroid</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Share</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bump</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Share</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">enc_reset_L</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Share</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">enc_reset_R</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Share</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theta_L</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Share</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theta_R</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Share</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#task_course.Task_Course" title="Link to this definition">¶</a></dt>
+<dd><p>The <cite>Task_Course</cite> task guides ROMI through a predefined course using
+a list of <cite>Path</cite> objects. Each path segment specifies the desired
+velocity, heading, yaw rate, and whether ROMI should follow a line or a
+compass heading. It uses PID controllers to adjust ROMI’s movement.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>run</strong> – A <cite>share</cite> that signals the task to start running the
+course.</p></li>
+<li><p><strong>Omega_L</strong> – A <cite>share</cite> of angular velocity of the left wheel in
+rad/s.</p></li>
+<li><p><strong>Omega_R</strong> – A <cite>share</cite> of angular velocity of the right wheel in
+rad/s.</p></li>
+<li><p><strong>heading</strong> – A <cite>share</cite> of the current heading angle of the robot
+in degrees.</p></li>
+<li><p><strong>yaw_rate</strong> – A <cite>share</cite> of the measured yaw rate of the robot in
+rad/s.</p></li>
+<li><p><strong>centroid</strong> – A <cite>share</cite> of the detected position of the line.</p></li>
+<li><p><strong>bump</strong> – A <cite>share</cite> of indicating whether a collision been detected.</p></li>
+<li><p><strong>enc_reset_L</strong> – A <cite>share</cite> to reset the left encoder count.</p></li>
+<li><p><strong>enc_reset_R</strong> – A <cite>share</cite> to reset the right encoder count.</p></li>
+<li><p><strong>theta_L</strong> – A <cite>share</cite> of the cumulative angle measured by the
+left wheel encoder.</p></li>
+<li><p><strong>theta_R</strong> – A <cite>share</cite> of the cumulative angle measured by the
+right wheel encoder.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">MECHA03 ROMI</a></h1>
+
+
+
+
+
+
+
+
+
+<search id="searchbox" style="display: none" role="search">
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script><h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../drivers/index.html">Hardware Drivers</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Tasks</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="index.html#task-structure">Task Structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#shares">Shares</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html#task-profile">Task Profile</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  <li><a href="index.html">Tasks</a><ul>
+      <li>Previous: <a href="index.html" title="previous chapter">Tasks</a></li>
+      <li>Next: <a href="motor.html" title="next chapter">&lt;no title&gt;</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2025, Col Cook, Nathan Neugeboren.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 8.2.3</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
+      
+      |
+      <a href="../_sources/tasks/course.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
