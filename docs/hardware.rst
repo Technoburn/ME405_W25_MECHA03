@@ -106,7 +106,7 @@ The purpose of this is voltage divider is to read the voltage the batteries are 
 
 .. image:: _static/Circuit.jpg
    :width: 100%
-   :alt: Volatge Divider Circuit
+   :alt: Voltage Divider Circuit
 
 
 Since the voltage divider follows the relation below, we can both ensure that the ADC pin doesn't exceed 3.3 volts, and calculate the equivalent voltage coming from the motor driver. 
@@ -125,7 +125,7 @@ V_ss = V_pin * 3.12 * 3.0 / 4095
 
 .. image:: _static/V_Divider1.jpg
    :width: 100%
-   :alt: Volatge Divider
+   :alt: Voltage Divider
 
 
 The circuit can be quickly made using a prototype board and can be inserted in the connection from the motor driver, to Vin to the Nucleo. The voltage divider should be wrapped in insulating tape to prevent unwanted shorts. 
