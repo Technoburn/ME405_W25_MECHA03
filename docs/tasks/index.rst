@@ -2,7 +2,7 @@ Tasks
 =====
 
 Our program uses a multitasking task-state paradigm, making use of the 
-`ME405 Library <https://spluttflob.github.io/ME405-Support/index.html>` provided
+`ME405 Library <https://spluttflob.github.io/ME405-Support/index.html>`_ provided
 scheduler and `Shares` which allows for scheduled execution of generator
 functions which implement finite state machines with variables shared between 
 tasks as necessary.
@@ -10,7 +10,9 @@ tasks as necessary.
 Task Structure
 --------------
 
-// Insert Task Diagram Pic
+.. image:: ../_static/TaskDiagram.png
+   :width: 100%
+   :alt: Task Diagram
 
 Overall 7 Tasks are implemented: 
 
