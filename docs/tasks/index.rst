@@ -1,6 +1,12 @@
 Tasks
 =====
 
+Our program uses a multitasking task-state paradigm, making use of the 
+`ME405 Library <https://spluttflob.github.io/ME405-Support/index.html>` provided
+scheduler and `Shares` which allows for scheduled execution of generator
+functions which implement finite state machines with variables shared between 
+tasks as necessary.
+
 Task Structure
 --------------
 
